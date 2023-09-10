@@ -19,7 +19,7 @@ print('Hola' == 'hola') # Igual que
 print('Hola' != 'hola') # Distinto que
 print(3 > 11) # Mayor que
 print(11 >= 10) # Mayor o igual que
-print(10 <= 10) # Menor op igual que
+print(10 <= 10) # Menor o igual que
 
 #Operadores de existencia
 
