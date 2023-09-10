@@ -1,5 +1,15 @@
+# Notas Generales
 
-# Proyecto 1 - Calculadora de Índice de masa corporal
+Este repo contiene todos los archivos y programas creados dentro del bootcamp Fundamentos de Python.
+
+Módulos:
+
+•	Módulo 1: Variables, operadores y cadenas de texto.
+
+
+# Módulo 1: Variables, operadores y cadenas de texto / Proyecto 1 - Calculadora de Índice de masa corporal
+
+Archivo de proyecto: proyecto1.py .
 
 Para la elaboración de este proyecto, la prioridad fue enfocarse en las validaciones de que los campos no estuvieran vacíos o que fueran entregados con la tecla de espacio “space”. Esto se logró gracias al uso del while True: y las validaciones como str. isalpha() y str.isnumeric() .
 Esto se usó principalmente para la obtención de los datos:
