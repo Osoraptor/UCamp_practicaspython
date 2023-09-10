@@ -11,20 +11,17 @@ Módulos:
 
 Archivo de proyecto: proyecto1.py .
 
-Para la elaboración de este proyecto, la prioridad fue enfocarse en las validaciones de que los campos no estuvieran vacíos o que fueran entregados con la tecla de espacio “space”. Esto se logró gracias al uso del while True: y las validaciones como str. isalpha() y str.isnumeric() .
+Para la elaboración de este proyecto, la prioridad fue enfocarse en las validaciones de que los campos no estuvieran vacíos o que fueran entregados con la tecla de espacio “*space*”. Esto se logró gracias al uso del **while True:** y las validaciones como **str. isalpha()** y **str.isnumeric()** .
 Esto se usó principalmente para la obtención de los datos:
 
-  •	Nombre
-  
-  •	Apellido Paterno
-  
-  •	Apellido materno
-  
-  •	Edad
+  - Nombre  
+  - Apellido Paterno  
+  - Apellido materno  
+  - Edad
 
-Por otro lado, fue un tanto más complicado las validaciones para los campos que requerían información decimal o en este caso flotante. Para esto se usó validaciones con el  while True: con la adición de try: , except ValueError: y la valición de los flotantes con isinstance(varibale, float) . 
+Por otro lado, fue un tanto más complicado las validaciones para los campos que requerían información decimal o en este caso flotante. Para esto se usó validaciones con el **while True:** con la adición de **try:** , **except ValueError:** y la valición de los flotantes con **isinstance(varibale, float)** . 
 
-Para el calculo del IMC, se hizo uso de las validaciones con el if, elif y el else; junto con el operador menor o igual que (<=).
+Para el calculo del IMC, se hizo uso de las validaciones con el **if**, **elif** y el **else**; junto con el operador menor o igual que (<=).
 Finalmente, al introducir todos los datos, se imprimé toda la información junto con la condición en la que se encuentra la persona con base al IMC obtenido.
 
 Menor a 18.9   = peso bajo
