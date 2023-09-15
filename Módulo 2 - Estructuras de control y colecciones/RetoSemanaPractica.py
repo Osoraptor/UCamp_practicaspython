@@ -40,11 +40,4 @@ else:
     print('Faltan ' + str((agno2 - agno)) + ' años para llegar al año que has introducido.')
     exit()
 
-
-
-
-
-
-
-
 # print(agno2)
