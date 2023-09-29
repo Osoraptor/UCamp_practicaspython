@@ -6,7 +6,7 @@ for i in range (3, 0, -1):
     pwd1 = input('Ingrese una contraseña: ')
     pwd1_valid = pwd1.startswith(('1', '2', '3', '4', '5', '6', '7', '8', '9', '0'))
 
-    if pwd1_valid == True:
+    if pwd1_valid == True: # Nota: aquí valida si es TRUE que el pwd empieza con un número
         
 
         for i in range (3, 0, -1):
