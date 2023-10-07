@@ -1,5 +1,6 @@
 
 ### Programa de alumnos con listas y ciclos ###
+### Mi template para while ###
 
 lista = []
 
