@@ -6,23 +6,28 @@
 
 # 
 
-import string # Se importa string para poder hacer uso del alfabeto
+import string # Se importa string para poder hacer uso del alfabeto list(string.ascii_uppercase)
 
-lista_abc = list(string.ascii_lowercase)
-print(lista_abc) #NOta: validación de lista del alfabeto
-
-
+lista_abc = list(string.ascii_uppercase)
+#print(lista_abc) #Nota: validación de lista del alfabeto
 
 
-def letras_abc(letra_user):
-    for letra in lista_abc:
-        if letra == letra_usuario:
-            print(f'Esta es la letra: {letra}')
-            break
-        else:
-            print('La letra no se encuentra en nuestro alfabeto.')
-            break
 
+
+def letras_abc(letraIngresada):
+    '''
+    En esta funcion se revisa lo siguiente:
+    El index de la letra ingresada por el usuario dentro de la lista del alfabeto.
+    Con base a ese index se le resta 1 y se suma 1 para poder hacer el print de la letra anteriror y siguiente.
+    '''
+    letraIngresadaID = lista_abc.index(letraIngresada) # Nota: Se utiliza el método .index para sacar la posición de la letra dentro de la lista.
+
+    letraAnterior = lista_abc[letraIngresadaID - 1]
+    print(f'La letra anterior es: ' + letraAnterior)
+
+    letraSiguiente = lista_abc[letraIngresadaID + 1]
+    print(f'La letra siguiente es: ' + letraSiguiente)
+    
 
 
 while True:
@@ -30,11 +35,17 @@ while True:
     choice = input('Ingresar letra (1) o terminar programa (7): ')
 
     if choice == '1':
-        letra_usuario = input('Ingrese una letra por favor: ').lower()
-        print(letra_usuario)
-        letras_abc(letra_usuario)
+        letra_usuario = input('Ingrese una letra por favor: ').upper()
+
+        if letra_usuario in lista_abc:
+            print(f'La letra ingresada es: {letra_usuario}')
+            letras_abc(letra_usuario)
+            
+        else:
+            print('La letra no se encuentra en nuestro alfabeto.')
+            
     elif choice == '7':
-        print('Cierre de programa.')
+        print('Cierre del programa.')
         exit()
     else:
         print('Opción invalida. Vuelva a intentar por favor.')

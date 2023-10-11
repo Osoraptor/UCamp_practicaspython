@@ -4,7 +4,7 @@
 cuadrados = []
 
 for numero in range(10):
-    numero = numero **2
+    numero = numero **3
     cuadrados.append(numero)
 
 print(cuadrados)
