@@ -37,7 +37,13 @@ def agreagar_elements(numero, elemento):
 ### Remover duplicados ###
 
 def remover_duplicados(lista_referencia, elementos_listas):
-
+    '''
+    Esta función toma como parametros la lista de referencia a tener en cuenta. Los elementos de esta se usarán para remover duplicados.
+    Se crea una lista temporal donde se guardan los elementos de la lista de referencia.
+    Se hace un loop con los elementos de la lista de referencia y con su index se borran los duplicados de la lista maestra.
+    Se hace un extend a la lista de refencia con la lista temporal para tener todo en contexot.
+    Se imprime la lista con las lista sin los elementos duplicados y los valores originales de la lista de referencia.
+    '''
     print(f'Lista de referencia: ', lista_de_listasX[lista_referencia - 1]) #Nota: Validación del Valor original de la lista de listas.
 
     elementos_borrar = []
