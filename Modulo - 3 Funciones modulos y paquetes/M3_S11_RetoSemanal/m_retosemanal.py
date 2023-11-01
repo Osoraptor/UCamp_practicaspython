@@ -1,5 +1,9 @@
 ### <<m_retosemanal.py>>
 
+lista_de_listasX = []
+elementos_listas = []
+lista_referencia = []
+
 def agreagar_elements(numero, elemento):
     '''
     Esta función recibe el número de listas y los elementos que contendrá una lista.
@@ -28,23 +32,48 @@ def agreagar_elements(numero, elemento):
 
     print(f'Las listas son: ', lista_de_listas)
 
+    lista_de_listasX.extend(lista_de_listas)
+
+### Remover duplicados ###
+
+def remover_duplicados(lista_referencia, elementos_listas):
+
+    print(f'Lista de referencia: ', lista_de_listasX[lista_referencia - 1]) #Nota: Validación del Valor original de la lista de listas.
+
+    elementos_borrar = []
+    eduplicados = elementos_listas
+    lista_RX = lista_referencia
+    
+
+    for item in lista_de_listasX[lista_RX - 1]:
+        elementos_borrar.append(item)
+
+    vueltas = 0
 
 
-# def agreagar_elementos(lista, valor):
-#     '''
-#     Función que agrega un dato a una lista especificada.
-#     '''
-#     if valor == '':
-#         valor = 'No especificado.'  
-#     lista.append(valor)
-#     return lista
+    while vueltas <= eduplicados:
 
 
-def quitar_nombresDuplicados(lista, valor):
-    '''
-    Función que quita nombres duplicados de la lista 1 que se encuentren en la lista 2.
-    '''
-    if valor == '':
-        valor = 'No especificado.'  
-    lista.append(valor)
-    return lista
+        for duplicado in lista_de_listasX:
+
+            if vueltas > eduplicados:
+                break
+
+            try:
+                duplicado_index = duplicado.index(elementos_borrar[vueltas])
+                
+            except ValueError:
+                pass
+            else:
+                del duplicado[duplicado_index]
+        
+        vueltas += 1
+
+
+    #print(lista_de_listasX) #Nota: Validación de listas sin duplicados borrando todos los elementos de la lista de referencia.
+   
+    print(f'Se borraron todos los duplicados y elementos de la lista {elementos_borrar[lista_RX - 1]}')
+
+    lista_de_listasX[0].extend(elementos_borrar)
+    print(f'Las listas sin los elementos duplicados son:', lista_de_listasX)
+

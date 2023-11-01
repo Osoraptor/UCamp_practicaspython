@@ -53,4 +53,32 @@ print(f'Número de elementos por lista: {elementos_listas}.')
  
 
 MR.agreagar_elements(numero_listas, elementos_listas)
+
+
+### Lista de referencia para borrado de duplicados ###
+
+
+while True:
+
+    lista_referencia = input('¿Que lista quiere usar como referencia? ')
+
+    if lista_referencia.isdigit():
+        lista_referencia = int(lista_referencia)
+        if lista_referencia == 0:
+            print('El valor no puede ser 0. Intente nuevamente por favor')
+        elif lista_referencia <= 5:
+            break
+        else:       
+            print('El limite máximo es 5. Intente nuevamente por favor.')
+
+    else:
+        print('Opción invalida. Ingrese un número por favor.')
+
+
+MR.remover_duplicados(lista_referencia, elementos_listas)
+
+lista_super = []
+
+
+
     
