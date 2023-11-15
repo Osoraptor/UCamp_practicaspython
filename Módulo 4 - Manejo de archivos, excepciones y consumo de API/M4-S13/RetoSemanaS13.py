@@ -28,7 +28,7 @@ def agregar_alumno():
 
     while True:
 
-        nombre_alumno = input('Ingrese el nombre del alumno: ').capitalize()
+        nombre_alumno = input('Ingrese el nombre del alumno: ').upper()
         
         nombre_digit_valid = any(chr.isdigit() for chr in nombre_alumno)
  
@@ -140,7 +140,7 @@ def menu_inicio():
         menu_inicio()
     elif menu == 's' or menu == 'S':
         print('Fin del programa.', '\n', 'Bye!')
-        exit
+        exit()
 
 
 lista_alumnos = []
