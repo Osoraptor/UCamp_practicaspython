@@ -8,9 +8,9 @@
 
 
 
-def modificar_registro(ID):
+def modificar_registro(ID, lista_personas):
     print(ID) 
-    print(personas[ID])
+    print(lista_personas[ID])
 
         # with open('agenda.txt', 'w') as f_archivo: # se sobrescribe el archivo.
         #     f_archivo.writelines(personas)
@@ -55,18 +55,62 @@ def modificar_registro(ID):
             print('Opción invalida. Intente nuevamente', '\n')
 
     if menu_cambios == '1':
-        print()
+        
+        while True:
+            nombre = input('Introduce el nombre: ').upper()
+            apellido = input('Introduce el apellido: ').upper()
+            if nombre == '':
+                print('No has introducido un nombre.')
+            elif apellido == '':
+                print('No has introducido un apellido.')
+            else:
+                lista_personas[ID][1] = nombre
+                lista_personas[ID][2] = apellido
+                #break
+                menu_inicio()
+        
+        #print()
     elif menu_cambios == '2':
-        print()
+        #print()
+
+        while True:
+            try:
+                telefono = input('Introduce un teléfono: ')
+                int(telefono)
+                lista_personas[ID][5] = telefono
+                #break
+                menu_inicio()
+            except ValueError:
+                print('Debes introducir un número.')
+
     elif menu_cambios == '3':
-        print()
+        
+        #print()
+
+        while True:
+            correo = input('Introduce un correo: ')
+            if correo == '':
+                print('No has introducido un correo.')
+            else:
+                lista_personas[ID][4] = correo
+                #break
+                menu_inicio()
+
     elif menu_cambios == 'm' or menu_cambios == 'M':
         menu_inicio()
 
 #####################################################
 
 def menu_inicio():
-
+    '''
+    Esta función tiene como finalidad mostrar le menu de opciones del sistema.
+    Este menú cuenta con las siguientes opciones:
+        ● Agregar persona a la agenda (1).
+        ● Guardar datos en el archivo (2).
+        ● Ver registros en el archivo. (3).
+        ● Modificar registros. (4).
+        ● Salir (7).
+    '''
     contactos = 0
 
     while True:
@@ -138,7 +182,8 @@ def menu_inicio():
 
         elif opcion == '4':
             
-            print(personas) # Validación: Se revisa que hay en la lista de personas.
+            # print('Estos son los registros actuales: ')
+            # print(personas) # Validación: Se revisa que hay en la lista de personas.
 
 
 
@@ -149,9 +194,23 @@ def menu_inicio():
                 
                 while True:
                     try:
-                        persona_ID = input(print('¿Que persona quiere modificar sus atributos?'))
+                        print('\nEstos son los registros actuales: ')
+                        print(personas, '\n')
+                        persona_ID = input('¿Que persona quiere modificar sus atributos? (Ingrese el ID de la persona). ')
+                        
                         int(persona_ID)
-                        print(f'Ha seleccionado a la persona # ', persona_ID)
+                        
+                        if int(persona_ID) > 0 and int(persona_ID) <= len(personas):
+
+                            print(f'Ha seleccionado a la persona # ', persona_ID)
+                            persona_ID = int(persona_ID)
+                            modificar_registro((persona_ID - 1), personas)
+
+                        else:
+                            print('\nOpción invalidad. Vuelva a intentar.\n')
+
+
+
                     except ValueError:
                         print('Debes introducir un número.')
                 
